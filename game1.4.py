@@ -3,16 +3,17 @@ root = Tk()
 drawpad = Canvas(root, width=800,height=600, background='white')
 
 finish = drawpad.create_rectangle(0, 0, 75, 50, fill="green")
+
+e1 = drawpad.create_rectangle(0,540,425,570, fill="white", outline="white")
+e2 = drawpad.create_rectangle(700,500,800,600, fill="white", outline="white")
+e3 = drawpad.create_rectangle(700,0,800,560, fill="white", outline="white")
+e4 = drawpad.create_rectangle(300,150,450,300, fill="white", outline="white")
+e5 = drawpad.create_rectangle(250,0,550,50, fill="white", outline="white")
+e6 = drawpad.create_rectangle(110,190,160,470, fill="white", outline="white")
+e7 = drawpad.create_rectangle(500,430,550,495, fill="white", outline="white")
+e8 = drawpad.create_rectangle(230,180,290,240, fill="white", outline="white")
+hint1 = drawpad.create_rectangle(300,580,310,600, fill="white", outline="white")
 player = drawpad.create_oval(390,580,410,600, fill="blue")
-e1 = drawpad.create_rectangle(0,540,425,570, fill="white")
-e2 = drawpad.create_rectangle(700,500,800,600, fill="white")
-e3 = drawpad.create_rectangle(700,0,800,560, fill="white")
-e4 = drawpad.create_rectangle(300,150,450,300, fill="white")
-e5 = drawpad.create_rectangle(250,0,550,50, fill="white")
-e6 = drawpad.create_rectangle(110,190,160,470, fill="white")
-e7 = drawpad.create_rectangle(500,430,550,495, fill="white")
-e8 = drawpad.create_rectangle(230,180,290,240, fill="white")
-hint1 = drawpad.create_rectangle(300,580,310,600, fill="white")
 #collisionDetect == false
 
 enemyList =[e1, e2, e3, e4, e5, e6, e7, e8]
@@ -37,7 +38,9 @@ class myApp(object):
         if self.collisionDetect() == True:
             print "good job youve made it"  
         if self.collisionDetect2() == True:
+            sx1,sy1,sx2,sy2 = 390,580,410,600
             print "u tuk a rong turn m8" 
+            drawpad.move(player,sx1 - x1, sy1 - y1)
         if event.char == "w":
             if y1 > 0:
                 drawpad.move(player,0,-4)
@@ -58,10 +61,10 @@ class myApp(object):
                 drawpad.move(player,4,0)
             else:
                 return
+
     def collisionDetect2(self): 
         global player   
         rx1,ry1,rx2,ry2 = drawpad.coords(player)
-        print "triggered"
         for x in enemyList:
             ex1,ey1,ex2,ey2 = drawpad.coords(x)
             if (rx1 >= ex1 and rx2 <= ex2) and (ry1 >= ey1 and ry2 <= ey2):
