@@ -4,6 +4,8 @@ drawpad = Canvas(root, width=800,height=600, background='white')
 
 finish = drawpad.create_rectangle(0, 0, 75, 50, fill="green")
 player = drawpad.create_oval(390,580,410,600, fill="blue")
+enemny1 = drawpad.create_rectangle(0,550,410,570, fill="white")
+hint1 = drawpad.create_rectangle(300,580,310,600, fill="white")
 #collisionDetect == false
 class myApp(object):
     def __init__(self, parent):
