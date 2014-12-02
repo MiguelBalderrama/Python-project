@@ -12,11 +12,12 @@ e5 = drawpad.create_rectangle(250,0,550,50, fill="white", outline="white")
 e6 = drawpad.create_rectangle(110,190,160,470, fill="white", outline="white")
 e7 = drawpad.create_rectangle(500,430,550,495, fill="white", outline="white")
 e8 = drawpad.create_rectangle(230,180,290,240, fill="white", outline="white")
+e9 = drawpad.create_rectangle(0,450,110,600, fill="white", outline="white")
 hint1 = drawpad.create_rectangle(300,580,310,600, fill="white", outline="white")
 player = drawpad.create_oval(390,580,410,600, fill="blue")
 #collisionDetect == false
 
-enemyList =[e1, e2, e3, e4, e5, e6, e7, e8]
+enemyList =[e1, e2, e3, e4, e5, e6, e7, e8, e9]
 
     
 
